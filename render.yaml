@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: kursy-shop-bot
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: PORT
+        value: "3000"
+      - key: PUBLIC_URL
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ADMIN_CHAT_ID
+        sync: false
+      - key: PAYMENT_PROVIDER
+        value: demo
+      - key: YOOMONEY_WALLET
+        sync: false
+      - key: YOOMONEY_SECRET
+        sync: false

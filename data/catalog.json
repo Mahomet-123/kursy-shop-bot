@@ -1,0 +1,919 @@
+[
+  {
+    "id": 1,
+    "title": "Массовые продажи на авито. Я сам",
+    "category": "E-commerce и дропшиппинг",
+    "price": 1700,
+    "url": "https://cloud.mail.ru/public/fuQF/K8baYE5ku"
+  },
+  {
+    "id": 2,
+    "title": "Как запустить прибыльный Shopify дропшиппинг магазин с нуля",
+    "category": "E-commerce и дропшиппинг",
+    "price": 1900,
+    "url": "https://disk.yandex.ru/d/MYTCDIOwVdcXug"
+  },
+  {
+    "id": 3,
+    "title": "Легальный Beauty-Бизнес. Санпин и Проверки",
+    "category": "Бизнес и финансы",
+    "price": 1500,
+    "url": "https://disk.yandex.ru/d/rZ-9Z4hMDZH8Hw"
+  },
+  {
+    "id": 4,
+    "title": "Современный React с Нуля",
+    "category": "Программирование и IT",
+    "price": 1700,
+    "url": "https://disk.yandex.ru/d/hdIPei4FB92sgw"
+  },
+  {
+    "id": 5,
+    "title": "Материалы Закрытого SEO-сообщества. Январь",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/W8Wr/rGokwhEN3"
+  },
+  {
+    "id": 6,
+    "title": "Создание видео с помощью сервисов искусственного интеллекта",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/sWY7/2NgaDa5dQ"
+  },
+  {
+    "id": 7,
+    "title": "Современная разработка на GO",
+    "category": "Программирование и IT",
+    "price": 2100,
+    "url": "https://cloud.mail.ru/public/B5N7/tx1kx9FPN"
+  },
+  {
+    "id": 8,
+    "title": "Курс по нейромедиаторам: управление физическим, психическим здоровьем",
+    "category": "Здоровье и психология",
+    "price": 800,
+    "url": "https://cloud.mail.ru/public/hZsn/4fdASHD2S"
+  },
+  {
+    "id": 9,
+    "title": "Практикум по нейросетям: тексты + картинки",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1700,
+    "url": "https://cloud.mail.ru/public/hkmz/k5mf6f5Gs"
+  },
+  {
+    "id": 10,
+    "title": "Как зарабатывать на недвижимости, не имея ничего?",
+    "category": "Бизнес и финансы",
+    "price": 1500,
+    "url": "https://cloud.mail.ru/public/2Fho/cZHbkyqM7"
+  },
+  {
+    "id": 11,
+    "title": "My Revit - оформление 3Д видов",
+    "category": "Дизайн и графика",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/EHhu/rPfVtZ9Fw"
+  },
+  {
+    "id": 12,
+    "title": "Публичные выступления",
+    "category": "Личная эффективность и навыки",
+    "price": 1000,
+    "url": "https://cloud.mail.ru/public/w6GW/P9YEnUtph"
+  },
+  {
+    "id": 13,
+    "title": "Восстановление здоровья - PRO Печень",
+    "category": "Здоровье и психология",
+    "price": 1000,
+    "url": "https://cloud.mail.ru/public/LEoF/25EBgxyHq"
+  },
+  {
+    "id": 14,
+    "title": "Прибыльный Google Ads поиск + товарка + Серая нутра + Google Ads",
+    "category": "Маркетплейсы",
+    "price": 1500,
+    "url": "https://cloud.mail.ru/public/Pxv7/dvZiwsgmY"
+  },
+  {
+    "id": 15,
+    "title": "Композиция. Пластическое формообразование",
+    "category": "Дизайн и графика",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/YqsL/5sC7tHtbo"
+  },
+  {
+    "id": 16,
+    "title": "Мне можно все: рисую что хочу",
+    "category": "Дизайн и графика",
+    "price": 1200,
+    "url": "https://cloud.mail.ru/public/mHPG/P6vueb5V9"
+  },
+  {
+    "id": 17,
+    "title": "OZON - старт и продвижение",
+    "category": "Маркетплейсы",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/9cjk/rYUugCTLu"
+  },
+  {
+    "id": 18,
+    "title": "FL Studio 20 абсолютный профи",
+    "category": "Хобби и творчество",
+    "price": 1000,
+    "url": "https://cloud.mail.ru/public/2rEq/3vzn6QZbR"
+  },
+  {
+    "id": 19,
+    "title": "Курс по верстке и анимации на тильде",
+    "category": "Программирование и IT",
+    "price": 1800,
+    "url": "https://cloud.mail.ru/public/X5Ax/6FAeb3kB9"
+  },
+  {
+    "id": 20,
+    "title": "Применяй и зарабатывай. Интернет-маркетинг. Продажи.Pr. Самостоятельный",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/ZLpF/wAS8VDXhS"
+  },
+  {
+    "id": 21,
+    "title": "Создать 2023",
+    "category": "Бизнес и финансы",
+    "price": 1100,
+    "url": "https://cloud.mail.ru/public/aGwj/RUcosNuf1"
+  },
+  {
+    "id": 22,
+    "title": "Полный курс по современному TypeScript",
+    "category": "Программирование и IT",
+    "price": 2000,
+    "url": "https://cloud.mail.ru/public/trFJ/RzJosfCng"
+  },
+  {
+    "id": 23,
+    "title": "Коррекция зрения",
+    "category": "Здоровье и психология",
+    "price": 900,
+    "url": "https://cloud.mail.ru/public/4zyf/pNxvZNQmR"
+  },
+  {
+    "id": 24,
+    "title": "Курсы по мобильной видеосъемке",
+    "category": "Видео, блогинг и контент",
+    "price": 1200,
+    "url": "https://cloud.mail.ru/public/AyaQ/bWDoAsWHU"
+  },
+  {
+    "id": 25,
+    "title": "Мобильный сайт за час",
+    "category": "Программирование и IT",
+    "price": 1900,
+    "url": "https://cloud.mail.ru/public/JFXS/RyHwNBttK"
+  },
+  {
+    "id": 26,
+    "title": "Полный курс по ЯндексБизнес. Продвижение с нуля",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/sD9Q/UBq45D88C"
+  },
+  {
+    "id": 27,
+    "title": "Курс по дизайну. Вместе все получится",
+    "category": "Дизайн и графика",
+    "price": 1600,
+    "url": "https://cloud.mail.ru/public/zUDF/4p9GeYaCf"
+  },
+  {
+    "id": 28,
+    "title": "Как внедрить искусственный интеллект в свой бизнес на маркетплейсе",
+    "category": "Маркетплейсы",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/b5ex/K9RVzewUK"
+  },
+  {
+    "id": 29,
+    "title": "Настраивайте таргет как топовое digital-агентство",
+    "category": "Арбитраж и трафик",
+    "price": 2400,
+    "url": "https://cloud.mail.ru/public/vsVz/gx3SctQcf"
+  },
+  {
+    "id": 30,
+    "title": "Видео курс по продвижению любого контента через SEO",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1100,
+    "url": "https://cloud.mail.ru/public/zvo1/yDZnXFhDE"
+  },
+  {
+    "id": 31,
+    "title": "ChatGPT и ваш первый доход в Интернете: практический курс",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1500,
+    "url": "https://cloud.mail.ru/public/UcTe/VEp3SBCfH"
+  },
+  {
+    "id": 32,
+    "title": "Гидропоника для начинающих",
+    "category": "Хобби и творчество",
+    "price": 600,
+    "url": "https://cloud.mail.ru/public/5qcA/HXVURXRAs"
+  },
+  {
+    "id": 33,
+    "title": "Изучаем Python 3.10 с основ, разработка на языке Python",
+    "category": "Программирование и IT",
+    "price": 1800,
+    "url": "https://cloud.mail.ru/public/XVAY/TRvXo8kST"
+  },
+  {
+    "id": 34,
+    "title": "Монстры Маркетинга 7в1",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1100,
+    "url": "https://cloud.mail.ru/public/54vh/4ookpG4xo"
+  },
+  {
+    "id": 35,
+    "title": "Как начать продавать на Wildberries. 6 поток",
+    "category": "Маркетплейсы",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/8irw/4245S3cGy"
+  },
+  {
+    "id": 36,
+    "title": "VK Реклама от А до Я",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1200,
+    "url": "https://cloud.mail.ru/public/57NV/4CaYAodxR"
+  },
+  {
+    "id": 37,
+    "title": "Подписчики в Телеграм-канал через Яндекс Директ",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/LLiR/ZZHvAsdpt"
+  },
+  {
+    "id": 38,
+    "title": "Курс по русскому фрилансу",
+    "category": "Бизнес и финансы",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/dzAu/XnCKqD33S"
+  },
+  {
+    "id": 39,
+    "title": "Здоровый желудок от гастрита и язв",
+    "category": "Здоровье и психология",
+    "price": 700,
+    "url": "https://cloud.mail.ru/public/ZACg/imBtaxGEL"
+  },
+  {
+    "id": 40,
+    "title": "Продвижение Вконтакте психологов и коучей",
+    "category": "Здоровье и психология",
+    "price": 900,
+    "url": "https://cloud.mail.ru/public/7B2Q/ZW3RfpXR2"
+  },
+  {
+    "id": 41,
+    "title": "Финансовое моделирование",
+    "category": "Бизнес и финансы",
+    "price": 1100,
+    "url": "https://cloud.mail.ru/public/NZYc/fCcdMHt6q"
+  },
+  {
+    "id": 42,
+    "title": "Курс по Арбитражу трафика от Ибрагима Мехмедова \"РАКЕТА 7.0\"",
+    "category": "Арбитраж и трафик",
+    "price": 2200,
+    "url": "https://drive.google.com/drive/folders/1ss7-5LAVXos14lQkGOyCS36KIBYU5ZG-"
+  },
+  {
+    "id": 43,
+    "title": "Здоровая самооценка - советы от психолога",
+    "category": "Здоровье и психология",
+    "price": 700,
+    "url": "https://cloud.mail.ru/public/FCpk/RKAktvrXy"
+  },
+  {
+    "id": 44,
+    "title": "Курс для начинающих копирайтеров. Как войти в профессию редактора и копирайтера",
+    "category": "Бизнес и финансы",
+    "price": 1100,
+    "url": "https://cloud.mail.ru/public/aqek/BsxajcCjT"
+  },
+  {
+    "id": 45,
+    "title": "Экспертная книга на миллион",
+    "category": "Бизнес и финансы",
+    "price": 1100,
+    "url": "https://cloud.mail.ru/public/2KNp/JCAijrKiR"
+  },
+  {
+    "id": 46,
+    "title": "Как снять 160 reels за 2 часа",
+    "category": "Видео, блогинг и контент",
+    "price": 1000,
+    "url": "https://cloud.mail.ru/public/Kp6w/eC5MEURdc"
+  },
+  {
+    "id": 47,
+    "title": "Мотивация. От страха к вдохновению",
+    "category": "Личная эффективность и навыки",
+    "price": 600,
+    "url": "https://cloud.mail.ru/public/iGc3/iZwEQitEc"
+  },
+  {
+    "id": 48,
+    "title": "Telegram-бот для эксперта",
+    "category": "Бизнес и финансы",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/P9WN/HbTfrLmES"
+  },
+  {
+    "id": 49,
+    "title": "ChatGPT: продвинутые техники",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1700,
+    "url": "https://cloud.mail.ru/public/kKii/snEowFChn"
+  },
+  {
+    "id": 50,
+    "title": "Психология успеха. Терапия личного бренда. Инструменты нейромаркетинга",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/eXxL/1LRv6U6JL"
+  },
+  {
+    "id": 51,
+    "title": "Продающие рассылки в e-mail, чат-ботах, мессенджерах",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1100,
+    "url": "https://cloud.mail.ru/public/j645/cjiGXytcK"
+  },
+  {
+    "id": 52,
+    "title": "Правила организации данных в таблицах Excel",
+    "category": "Программирование и IT",
+    "price": 2100,
+    "url": "https://cloud.mail.ru/public/1Ur2/QjTqikTfn"
+  },
+  {
+    "id": 53,
+    "title": "Дилер связок: Новогодняя ярмарка. Тариф ALL-IN",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/a5DJ/3qy9tMFnM"
+  },
+  {
+    "id": 54,
+    "title": "Тренинг по созданию мини-продуктов. Тариф Стандарт",
+    "category": "Хобби и творчество",
+    "price": 900,
+    "url": "https://cloud.mail.ru/public/unt4/QnMSJ8H6y"
+  },
+  {
+    "id": 55,
+    "title": "Воркшоп по wildberries уроки и разборы",
+    "category": "Маркетплейсы",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/gEdn/osfWBt6h9"
+  },
+  {
+    "id": 56,
+    "title": "Мастерская Telegram: Концепция. Контент. Стратегия продвижения",
+    "category": "Видео, блогинг и контент",
+    "price": 1600,
+    "url": "https://cloud.mail.ru/public/9Cit/dUyY3kFQh"
+  },
+  {
+    "id": 57,
+    "title": "Нейрокопирайтер",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1500,
+    "url": "https://cloud.mail.ru/public/W3dT/f9ArftLRZ"
+  },
+  {
+    "id": 58,
+    "title": "BAS Авто-Маскировка",
+    "category": "Хобби и творчество",
+    "price": 500,
+    "url": "https://cloud.mail.ru/public/VVfo/uXc2N5okT"
+  },
+  {
+    "id": 59,
+    "title": "ИИ и нейросети для бизнеса. Что умеет ChatGPT и другие LLM и что нет. Основные мифы и кейсы",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/eKwq/vCqnoWPf4"
+  },
+  {
+    "id": 60,
+    "title": "Сливаем трафик с маркетплейса FB через нейросети",
+    "category": "Арбитраж и трафик",
+    "price": 2000,
+    "url": "https://cloud.mail.ru/public/UNwf/nRrkgK6W5"
+  },
+  {
+    "id": 61,
+    "title": "CryptoInvestor - Заработок на криптовалюте от 100$ в сутки",
+    "category": "Криптовалюта и трейдинг",
+    "price": 2500,
+    "url": "https://cloud.mail.ru/public/c3Hw/3HRQqJtPT"
+  },
+  {
+    "id": 62,
+    "title": "Photoshop PRO",
+    "category": "Дизайн и графика",
+    "price": 1200,
+    "url": "https://cloud.mail.ru/public/buXN/tJwb98X9T"
+  },
+  {
+    "id": 63,
+    "title": "Денежная система Торнадо - Заработайте от 1000$ в месяц на телеграмм-ботах",
+    "category": "Бизнес и финансы",
+    "price": 1200,
+    "url": "https://cloud.mail.ru/public/fJrY/13f5MpmYi"
+  },
+  {
+    "id": 64,
+    "title": "Веб дизайн в Figma",
+    "category": "Программирование и IT",
+    "price": 2000,
+    "url": "https://disk.yandex.ru/d/nDLl6NWMx6yRKA"
+  },
+  {
+    "id": 65,
+    "title": "Название: Продвинутый курс по созданию Лендингов на Тильде",
+    "category": "Программирование и IT",
+    "price": 2000,
+    "url": "https://disk.yandex.ru/d/XvrKmvvqooF6mg"
+  },
+  {
+    "id": 66,
+    "title": "Курс по созданию Таплинка: для блога и бизнеса",
+    "category": "Программирование и IT",
+    "price": 2000,
+    "url": "https://cloud.mail.ru/public/Tqdi/ep4VhcMaD"
+  },
+  {
+    "id": 67,
+    "title": "Воронка продаж на миллион",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/uehk/Tw8WBpY3r"
+  },
+  {
+    "id": 68,
+    "title": "Cryptology Work Shop v5.0",
+    "category": "Криптовалюта и трейдинг",
+    "price": 2700,
+    "url": "https://cloud.mail.ru/public/6MLu/nk26ePeCw"
+  },
+  {
+    "id": 69,
+    "title": "Комплексная настройка безопасности и анонимности",
+    "category": "Хобби и творчество",
+    "price": 700,
+    "url": "https://cloud.mail.ru/public/3D4T/fBfxUDMr3"
+  },
+  {
+    "id": 70,
+    "title": "Крипто Старт",
+    "category": "Криптовалюта и трейдинг",
+    "price": 2600,
+    "url": "https://cloud.mail.ru/public/4bFu/4rxKw19Tb"
+  },
+  {
+    "id": 71,
+    "title": "WWFoxTrading",
+    "category": "Криптовалюта и трейдинг",
+    "price": 2500,
+    "url": "https://cloud.mail.ru/public/mt5u/6hx54N8Ns"
+  },
+  {
+    "id": 72,
+    "title": "Автоворонки Fvck Stories",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1100,
+    "url": "https://cloud.mail.ru/public/nyGM/URpe5aska"
+  },
+  {
+    "id": 73,
+    "title": "Мастер-класс ProПамять",
+    "category": "Здоровье и психология",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/ravv/qyTQwvR6R"
+  },
+  {
+    "id": 74,
+    "title": "Монтаж видео на компьютере в видеоредакторе CapCut",
+    "category": "Видео, блогинг и контент",
+    "price": 1000,
+    "url": "https://cloud.mail.ru/public/ZBx1/a8EM7adWS"
+  },
+  {
+    "id": 75,
+    "title": "ChargeMachine",
+    "category": "Криптовалюта и трейдинг",
+    "price": 2500,
+    "url": "https://cloud.mail.ru/public/HJhm/sXyGjZQ6i"
+  },
+  {
+    "id": 76,
+    "title": "Пересборка личности VIP",
+    "category": "Здоровье и психология",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/crfA/S9nSxT3o2"
+  },
+  {
+    "id": 77,
+    "title": "Shorts 3.0",
+    "category": "Видео, блогинг и контент",
+    "price": 900,
+    "url": "https://cloud.mail.ru/public/B4oX/6qB3NYPzH"
+  },
+  {
+    "id": 78,
+    "title": "YouTube Production",
+    "category": "Видео, блогинг и контент",
+    "price": 1200,
+    "url": "https://cloud.mail.ru/public/q9mK/1JpdpUAN4"
+  },
+  {
+    "id": 79,
+    "title": "Sales 0-100. Тариф - VIP",
+    "category": "Бизнес и финансы",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/dBQc/hv4HGC4eF"
+  },
+  {
+    "id": 80,
+    "title": "Мастер-группа по Техническому SEO",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1800,
+    "url": "https://cloud.mail.ru/public/Z6FE/TmD9nSjZH"
+  },
+  {
+    "id": 81,
+    "title": "Практикум 7 шагов к успешному старту в Reels",
+    "category": "Видео, блогинг и контент",
+    "price": 900,
+    "url": "https://disk.yandex.ru/d/D50AfZ-EB6OywA"
+  },
+  {
+    "id": 82,
+    "title": "Джедайские техники он-лайн, а не какой-то там тайм-менеджмен. Тариф Непростой",
+    "category": "Личная эффективность и навыки",
+    "price": 1000,
+    "url": "https://cloud.mail.ru/public/yHH6/2fLfzV6km"
+  },
+  {
+    "id": 83,
+    "title": "Подготовка недвижимости к аренде или продаже. Как продать или сдать объект ещё дороже",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1300,
+    "url": "https://drive.google.com/drive/folders/15bGTTM6q6wgwHzVYEtVluN045jdPOjBJ"
+  },
+  {
+    "id": 84,
+    "title": "Нейросети для учебы и работы",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1600,
+    "url": "https://cloud.mail.ru/public/CmuZ/iqsfsCYUQ"
+  },
+  {
+    "id": 85,
+    "title": "Съемка для интернет-магазинов на предметном столе",
+    "category": "E-commerce и дропшиппинг",
+    "price": 1700,
+    "url": "https://cloud.mail.ru/public/9Rvz/mhV99e9Li"
+  },
+  {
+    "id": 86,
+    "title": "Нейросети для психологов",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1400,
+    "url": "https://disk.yandex.ru/d/Nel4vH9ml8zJoA"
+  },
+  {
+    "id": 87,
+    "title": "Двухдневный интенсив 2.0. Погружение без воды для менеджеров и селлеров маркетплейсов",
+    "category": "Маркетплейсы",
+    "price": 1500,
+    "url": "https://cloud.mail.ru/public/5AFo/VrHLAWcr8"
+  },
+  {
+    "id": 88,
+    "title": "Как получить грант на социальный или образовательный проект? Пошаговая инструкция от А до Я",
+    "category": "Бизнес и финансы",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/4E15/2K6NUyeH6"
+  },
+  {
+    "id": 89,
+    "title": "Заливаем белую товарку в Тик Ток. Тариф Tovarka Start",
+    "category": "Арбитраж и трафик",
+    "price": 2400,
+    "url": "https://cloud.mail.ru/public/GidF/BU5LQK6DX"
+  },
+  {
+    "id": 90,
+    "title": "Targetorium Creative Strategy",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1100,
+    "url": "https://cloud.mail.ru/public/mC8R/LSyJAqLVA"
+  },
+  {
+    "id": 91,
+    "title": "Прогрей трафик 3.0",
+    "category": "Арбитраж и трафик",
+    "price": 2000,
+    "url": "https://cloud.mail.ru/public/n8fw/o35ZfZcDA"
+  },
+  {
+    "id": 92,
+    "title": "Рисунок и графика",
+    "category": "Дизайн и графика",
+    "price": 1200,
+    "url": "https://cloud.mail.ru/public/wV6G/NarcjNhzq"
+  },
+  {
+    "id": 93,
+    "title": "Прикладной курс по управлению проектами внедрения программ 1С. Рабочие инструменты",
+    "category": "Программирование и IT",
+    "price": 2100,
+    "url": "https://cloud.mail.ru/public/39Ma/oQwEF8GaF"
+  },
+  {
+    "id": 94,
+    "title": "Сила вовлечения",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/EoCL/dLxezcLve"
+  },
+  {
+    "id": 95,
+    "title": "ChatGPT Expert. Тариф Light",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/ne15/eH7u6Z3Cg"
+  },
+  {
+    "id": 96,
+    "title": "Готовые шаблоны для создания контента за 5 минут",
+    "category": "Видео, блогинг и контент",
+    "price": 1000,
+    "url": "https://cloud.mail.ru/public/8zC8/7pYrg4PCd"
+  },
+  {
+    "id": 97,
+    "title": "Как с помощью ChatGPT и Meta создать востребованный продукт",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1600,
+    "url": "https://cloud.mail.ru/public/JX4T/hY4Z4ro48"
+  },
+  {
+    "id": 98,
+    "title": "Создание ботов в GPT для стоков и не только",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1500,
+    "url": "https://cloud.mail.ru/public/rjM6/YL4i2EaV7"
+  },
+  {
+    "id": 99,
+    "title": "Курс по созданию сайта на WordPress с нуля",
+    "category": "Программирование и IT",
+    "price": 1700,
+    "url": "https://cloud.mail.ru/public/CqCL/gHaBAR2rt"
+  },
+  {
+    "id": 100,
+    "title": "Дизайн Hardcore UxUi",
+    "category": "Дизайн и графика",
+    "price": 1800,
+    "url": "https://cloud.mail.ru/public/JNt6/zpdthmxnk"
+  },
+  {
+    "id": 101,
+    "title": "Имитация мрамора на основе акрила",
+    "category": "Дизайн и графика",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/NJt8/ZWvdwztoW"
+  },
+  {
+    "id": 102,
+    "title": "Грамотная речь как способ добиваться своего в любой ситуации",
+    "category": "Личная эффективность и навыки",
+    "price": 500,
+    "url": "https://cloud.mail.ru/public/8XBt/zUNfDNWF3"
+  },
+  {
+    "id": 103,
+    "title": "6 конспектов-ключей для интернет бизнеса",
+    "category": "Бизнес и финансы",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/1NYZ/8D5GeXLem"
+  },
+  {
+    "id": 104,
+    "title": "Рилсы-шпалы. Тариф Хочу максимум",
+    "category": "Хобби и творчество",
+    "price": 900,
+    "url": "https://cloud.mail.ru/public/wMCN/aKcGonR3y"
+  },
+  {
+    "id": 105,
+    "title": "Человек и три его стремления",
+    "category": "Личная эффективность и навыки",
+    "price": 600,
+    "url": "https://cloud.mail.ru/public/NZuy/JXXFCmNVo"
+  },
+  {
+    "id": 106,
+    "title": "Нейронные сети, трафик Facebook",
+    "category": "Арбитраж и трафик",
+    "price": 2300,
+    "url": "https://cloud.mail.ru/public/cwA7/VYCjAfsXn"
+  },
+  {
+    "id": 107,
+    "title": "Программа подготовки шахматистов С нуля до 3 взрослого разряда",
+    "category": "Личная эффективность и навыки",
+    "price": 700,
+    "url": "https://cloud.mail.ru/public/BhvP/2wYLZxmny"
+  },
+  {
+    "id": 108,
+    "title": "Как приручить нейросеть для видео",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/A2XD/9NnRhqhPu"
+  },
+  {
+    "id": 109,
+    "title": "Создай свое портфолио",
+    "category": "Личная эффективность и навыки",
+    "price": 900,
+    "url": "https://cloud.mail.ru/public/DaBc/k8b2vKbLS"
+  },
+  {
+    "id": 110,
+    "title": "Эффективный рекрутер",
+    "category": "Бизнес и финансы",
+    "price": 1500,
+    "url": "https://cloud.mail.ru/public/towr/yaKxrWvPM"
+  },
+  {
+    "id": 111,
+    "title": "Бесплатная реклама Shorts + Reels + TikTok + VK клипы",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1200,
+    "url": "https://cloud.mail.ru/public/Dfg5/t6G9VSjSS"
+  },
+  {
+    "id": 112,
+    "title": "Все про базы данных",
+    "category": "Программирование и IT",
+    "price": 2000,
+    "url": "https://cloud.mail.ru/public/SUG8/uBZ6BT4Cn"
+  },
+  {
+    "id": 113,
+    "title": "Обзор возможностей ChatGPT-4 2023",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/gcWe/ZifRMXWc2"
+  },
+  {
+    "id": 114,
+    "title": "Иностранные работники - приём на работу, оплата труда и налогообложение",
+    "category": "Бизнес и финансы",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/LcjS/6aHXdWZCJ"
+  },
+  {
+    "id": 115,
+    "title": "Практические навыки для заработка на криптовалюте",
+    "category": "Криптовалюта и трейдинг",
+    "price": 2400,
+    "url": "https://cloud.mail.ru/public/yV4d/zM2XxqFVv"
+  },
+  {
+    "id": 116,
+    "title": "Готовые маркетинговые связки по Яндекс.Директ",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1100,
+    "url": "https://cloud.mail.ru/public/Dafr/G6G1MdG1j"
+  },
+  {
+    "id": 117,
+    "title": "Бизнес на Амазоне. Полный Пошаговый Обновленный Курс",
+    "category": "Бизнес и финансы",
+    "price": 1400,
+    "url": "https://cloud.mail.ru/public/s4sh/Y78TKZypp"
+  },
+  {
+    "id": 118,
+    "title": "Создание разнообразных видео через нейросети",
+    "category": "Искусственный интеллект и нейросети",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/RKyd/WEv5V1EYf"
+  },
+  {
+    "id": 119,
+    "title": "Инсталогия. Последний поток",
+    "category": "Видео, блогинг и контент",
+    "price": 1000,
+    "url": "https://cloud.mail.ru/public/zTiL/mYswraddx"
+  },
+  {
+    "id": 120,
+    "title": "Личный бренд с нуля. 44 современных инструмента для развития личного бренда",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1100,
+    "url": "https://cloud.mail.ru/public/4V9v/pfha7ZgCN"
+  },
+  {
+    "id": 121,
+    "title": "Рабочая тетрадь маркетолога по созданию воронок продаж",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1300,
+    "url": "https://cloud.mail.ru/public/xVgY/Ckad6WWQo"
+  },
+  {
+    "id": 122,
+    "title": "Как создается преумушества",
+    "category": "Маркетинг, реклама и SEO",
+    "price": 1200,
+    "url": "https://cloud.mail.ru/public/CaE3/1Kiw47p5N"
+  },
+  {
+    "id": 123,
+    "title": "Профессия Soft Skills for Hard Times",
+    "category": "Личная эффективность и навыки",
+    "price": 900,
+    "url": "https://cloud.mail.ru/public/WcdM/SW26mhtW6"
+  },
+  {
+    "id": 124,
+    "title": "Инфографика для маркетплейсов",
+    "category": "Маркетплейсы",
+    "price": 1500,
+    "url": "https://cloud.mail.ru/public/rz5S/mFti88ELg"
+  },
+  {
+    "id": 125,
+    "title": "Технологии вербовки",
+    "category": "Бизнес и финансы",
+    "price": 1200,
+    "url": "https://cloud.mail.ru/public/PFJT/5VNcUG3A8"
+  },
+  {
+    "id": 126,
+    "title": "Супер курс SNR TL MTF",
+    "category": "Криптовалюта и трейдинг",
+    "price": 2400,
+    "url": "https://cloud.mail.ru/public/GaJx/Ui3bv1aoC"
+  },
+  {
+    "id": 127,
+    "title": "Арбитраж COPY_PASTE",
+    "category": "Арбитраж и трафик",
+    "price": 2200,
+    "url": "https://cloud.mail.ru/public/PCLx/H5KHHG4j7"
+  },
+  {
+    "id": 128,
+    "title": "Как набрать 100 000 подписчиков",
+    "category": "Видео, блогинг и контент",
+    "price": 900,
+    "url": "https://cloud.mail.ru/public/Jq18/khMrRgaxx"
+  },
+  {
+    "id": 129,
+    "title": "Заработок на обмене криптовалют",
+    "category": "Криптовалюта и трейдинг",
+    "price": 2400,
+    "url": "https://cloud.mail.ru/public/HYbk/FuvxvDKMx"
+  },
+  {
+    "id": 130,
+    "title": "Красивые шрифты",
+    "category": "Дизайн и графика",
+    "price": 1200,
+    "url": "https://t.me/+hkdtFiHQHvYwYTcy"
+  },
+  {
+    "id": 131,
+    "title": "Гайды, чек-листы",
+    "category": "Хобби и творчество",
+    "price": 500,
+    "url": "https://t.me/sliv_freedom"
+  }
+]
