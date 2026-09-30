@@ -18,7 +18,9 @@ services:
       - key: ADMIN_CHAT_ID
         sync: false
       - key: PAYMENT_PROVIDER
-        value: demo
+        value: manual
+      - key: PAYMENT_DETAILS
+        sync: false
       - key: YOOMONEY_WALLET
         sync: false
       - key: YOOMONEY_SECRET

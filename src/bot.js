@@ -61,15 +61,17 @@ async function payItems(ctx, list) {
   const pay = await payments.createPayment(order);
   store.updateOrder(order.id, { providerOrderId: pay.providerOrderId });
 
-  if (payments.name === 'demo') {
-    await ctx.reply(
-      `🧾 Заказ ${order.id} на сумму ${fmt(total)} (демо-режим оплаты).\nНажми кнопку, чтобы имитировать оплату — дальше сработает выдача.`,
-      { reply_markup: new InlineKeyboard().text('💳 Я оплатил (демо)', `pay_demo:${order.id}`) },
-    );
-  } else {
+  if (payments.name === 'yoomoney') {
     await ctx.reply(
       `🧾 Заказ ${order.id} на сумму ${fmt(total)}.\nОплати по кнопке (СБП или карта). Как только получу подтверждение — пришлю материалы.`,
       { reply_markup: new InlineKeyboard().url('💳 Оплатить', pay.payUrl) },
+    );
+  } else {
+    // Ручной режим (manual) / демо: перевод по реквизитам + подтверждение вручную
+    const req = pay.requisites ? `\n\n💳 Реквизиты для перевода:\n${pay.requisites}` : '';
+    await ctx.reply(
+      `🧾 Заказ ${order.id} на сумму ${fmt(total)}.${req}\n\nПереведи сумму и нажми «Я оплатил» — продавец проверит поступление и откроет материалы.`,
+      { reply_markup: new InlineKeyboard().text('✅ Я оплатил', `pay_claim:${order.id}`) },
     );
   }
   ctx.session.cart = {};
@@ -104,14 +106,21 @@ function adminOrderText(o) {
   return t;
 }
 
+function orderButtons(id) {
+  return new InlineKeyboard()
+    .text('✅ Подтвердить выдачу', `adm:approve:${id}`)
+    .text('❌ Отклонить', `adm:reject:${id}`).row();
+}
+
 async function showAdminPending(ctx) {
-  const pending = store.listByStatus('paid');
-  if (!pending.length) return ctx.reply('📭 Нет заказов, ожидающих выдачи.');
-  for (const o of pending) {
-    const kb = new InlineKeyboard()
-      .text('✅ Подтвердить выдачу', `adm:approve:${o.id}`)
-      .text('❌ Отклонить', `adm:reject:${o.id}`).row();
-    await ctx.reply(adminOrderText(o), { reply_markup: kb });
+  const toCheck = store.listByStatus('claimed_paid');
+  const awaiting = store.listByStatus('pending_payment');
+  if (!toCheck.length && !awaiting.length) return ctx.reply('📭 Нет активных заказов.');
+  for (const o of toCheck) {
+    await ctx.reply('🔔 Проверить поступление\n' + adminOrderText(o), { reply_markup: orderButtons(o.id) });
+  }
+  for (const o of awaiting) {
+    await ctx.reply('⏳ Ожидает оплаты\n' + adminOrderText(o), { reply_markup: orderButtons(o.id) });
   }
 }
 
@@ -126,26 +135,35 @@ async function deliverToBuyer(order) {
   }
 }
 
-export async function notifyAdmin(order) {
+export async function notifyAdmin(order, kind = 'claim') {
   if (!bot || !ADMIN_ID) {
     console.log('[notify] админ недоступен, заказ', order.id);
     return;
   }
-  const kb = new InlineKeyboard()
-    .text('✅ Подтвердить выдачу', `adm:approve:${order.id}`)
-    .text('❌ Отклонить', `adm:reject:${order.id}`).row();
+  const head = kind === 'paid'
+    ? '💰 Получена оплата!'
+    : '🔔 Клиент сообщил об оплате — проверь поступление перевода.';
   try {
-    await bot.api.sendMessage(ADMIN_ID, '💰 Получена оплата!\n' + adminOrderText(order), { reply_markup: kb });
+    await bot.api.sendMessage(ADMIN_ID, head + '\n' + adminOrderText(order), { reply_markup: orderButtons(order.id) });
   } catch (e) {
     console.error('notify error', e.message);
   }
 }
 
+// Покупатель нажал «Я оплатил» (ручной режим) — ждём проверки админом
+export async function onPaymentClaimed(orderId) {
+  const order = store.getOrder(orderId);
+  if (!order || order.status !== 'pending_payment') return;
+  store.updateOrder(orderId, { status: 'claimed_paid', paidAt: new Date().toISOString() });
+  await notifyAdmin(order, 'claim');
+}
+
+// Подтверждение от платёжного провайдера (вебхук, если позже подключим ЮMoney)
 export async function onPaymentConfirmed(orderId) {
   const order = store.getOrder(orderId);
   if (!order || order.status !== 'pending_payment') return;
   store.updateOrder(orderId, { status: 'paid', paidAt: new Date().toISOString() });
-  await notifyAdmin(order);
+  await notifyAdmin(order, 'paid');
 }
 
 // ---------- Регистрация обработчиков ----------
@@ -155,7 +173,7 @@ if (bot) {
   bot.command('start', async (ctx) => {
     await ctx.reply(
       '👋 Привет! Это магазин обучающих материалов.\n'
-      + 'Выбери категорию, добавляй материалы в корзину и оплачивай через СБП.\n\n'
+      + 'Выбери категорию, добавляй материалы в корзину и оплачивай переводом по СБП.\n\n'
       + 'Команды:\n/catalog — каталог\n/cart — корзина\n/help — помощь',
       { reply_markup: categoriesKeyboard() },
     );
@@ -172,8 +190,8 @@ if (bot) {
     + '1. /catalog — выбери категорию\n'
     + '2. Открой материал → «🛒 В корзину» или «💳 Купить»\n'
     + '3. В корзине нажми «💳 Оплатить»\n'
-    + '4. Оплати через СБП/карту\n'
-    + '5. После подтверждения продавцом получишь ссылки на материалы',
+    + '4. Переведи сумму по реквизитам (СБП) и нажми «Я оплатил»\n'
+    + '5. Продавец проверит поступление и пришлёт ссылки на материалы',
   ));
 
   bot.command('admin', async (ctx) => {
@@ -243,14 +261,14 @@ if (bot) {
     await payItems(ctx, [{ item: it, qty: 1 }]);
   });
 
-  // Демо-оплата
-  bot.callbackQuery(/^pay_demo:(.+)$/, async (ctx) => {
+  // Покупатель сообщил об оплате (ручной/демо режим)
+  bot.callbackQuery(/^pay_(?:claim|demo):(.+)$/, async (ctx) => {
     const id = ctx.match[1];
     const order = store.getOrder(id);
     if (!order || order.status !== 'pending_payment') return ctx.answerCallbackQuery('Заказ уже обработан');
-    await ctx.answerCallbackQuery('Оплачено (демо) ✅');
-    await onPaymentConfirmed(id);
-    await ctx.editMessageText('✅ Оплата получена (демо-режим). Ожидай подтверждения выдачи от продавца.');
+    await ctx.answerCallbackQuery('Отправлено на проверку ✅');
+    await onPaymentClaimed(id);
+    await ctx.editMessageText('⏳ Спасибо! Заявка отправлена продавцу. Как только он подтвердит поступление перевода — пришлю материалы.');
   });
 
   // Админ: подтверждение выдачи
@@ -258,7 +276,9 @@ if (bot) {
     if (!isAdmin(ctx)) return ctx.answerCallbackQuery('Нет доступа');
     const id = ctx.match[1];
     const order = store.getOrder(id);
-    if (!order || order.status !== 'paid') return ctx.answerCallbackQuery('Уже обработан');
+    if (!order || !['pending_payment', 'claimed_paid', 'paid'].includes(order.status)) {
+      return ctx.answerCallbackQuery('Уже обработан');
+    }
     store.updateOrder(id, { status: 'delivered', deliveredAt: new Date().toISOString() });
     await deliverToBuyer(order);
     await ctx.editMessageText(`✅ Выдано: ${id}`);
@@ -269,7 +289,9 @@ if (bot) {
     if (!isAdmin(ctx)) return ctx.answerCallbackQuery('Нет доступа');
     const id = ctx.match[1];
     const order = store.getOrder(id);
-    if (!order || order.status !== 'paid') return ctx.answerCallbackQuery('Уже обработан');
+    if (!order || !['pending_payment', 'claimed_paid', 'paid'].includes(order.status)) {
+      return ctx.answerCallbackQuery('Уже обработан');
+    }
     store.updateOrder(id, { status: 'rejected' });
     try {
       await bot.api.sendMessage(order.userId, `К сожалению, заказ ${id} отклонён продавцом. Свяжитесь с поддержкой.`);

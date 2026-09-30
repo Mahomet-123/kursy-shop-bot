@@ -42,7 +42,7 @@ export function createOrder({ userId, username, items, total, provider }) {
     total,
     provider,
     providerOrderId: null,
-    status: 'pending_payment', // pending_payment -> paid -> delivered | rejected
+    status: 'pending_payment', // pending_payment -> claimed_paid -> delivered | rejected
     createdAt: new Date().toISOString(),
     paidAt: null,
     deliveredAt: null,
