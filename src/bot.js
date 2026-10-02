@@ -14,11 +14,13 @@ if (!TOKEN) {
 export const bot = TOKEN ? new Bot(TOKEN) : null;
 
 const fmt = (n) => `${n.toLocaleString('ru-RU')} ₽`;
+const short = (s, n = 46) => (s.length > n ? `${s.slice(0, n - 1)}…` : s);
 
 // ---------- Клавиатуры ----------
 function categoriesKeyboard() {
   const kb = new InlineKeyboard();
-  for (const cat of getCategoryNames()) kb.text(cat, `cat:${cat}`).row();
+  // В callback_data кладём ИНДЕКС категории: имена на кириллице превышают лимит 64 байта
+  getCategoryNames().forEach((cat, i) => kb.text(cat, `cat:${i}`).row());
   kb.text('🛒 Корзина', 'cart');
   return kb;
 }
@@ -26,7 +28,7 @@ function categoriesKeyboard() {
 function categoryKeyboard(cat) {
   const items = (getCategories()[cat] || []);
   const kb = new InlineKeyboard();
-  for (const it of items) kb.text(`#${it.id} ${it.title} — ${fmt(it.price)}`, `item:${it.id}`).row();
+  for (const it of items) kb.text(`#${it.id} ${short(it.title)} — ${fmt(it.price)}`, `item:${it.id}`).row();
   kb.text('◀️ К категориям', 'back:cats').row();
   kb.text('🛒 Корзина', 'cart');
   return kb;
@@ -205,8 +207,9 @@ if (bot) {
     await ctx.answerCallbackQuery();
   });
 
-  bot.callbackQuery(/^cat:(.+)$/, async (ctx) => {
-    const cat = ctx.match[1];
+  bot.callbackQuery(/^cat:(\d+)$/, async (ctx) => {
+    const cat = getCategoryNames()[Number(ctx.match[1])];
+    if (!cat) return ctx.answerCallbackQuery('Категория не найдена');
     await ctx.editMessageText(`📂 ${cat}:`, { reply_markup: categoryKeyboard(cat) });
     await ctx.answerCallbackQuery();
   });
@@ -214,9 +217,10 @@ if (bot) {
   bot.callbackQuery(/^item:(\d+)$/, async (ctx) => {
     const it = getItem(Number(ctx.match[1]));
     if (!it) return ctx.answerCallbackQuery('Не найдено');
+    // Без parse_mode: в названиях встречаются _ и * (напр. COPY_PASTE) — ломают Markdown
     await ctx.editMessageText(
-      `📄 *${it.title}*\nКатегория: ${it.category}\nЦена: ${fmt(it.price)}`,
-      { parse_mode: 'Markdown', reply_markup: itemKeyboard(it.id) },
+      `📄 ${it.title}\nКатегория: ${it.category}\nЦена: ${fmt(it.price)}`,
+      { reply_markup: itemKeyboard(it.id) },
     );
     await ctx.answerCallbackQuery();
   });
