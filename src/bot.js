@@ -28,7 +28,8 @@ function categoriesKeyboard() {
 function categoryKeyboard(cat) {
   const items = (getCategories()[cat] || []);
   const kb = new InlineKeyboard();
-  for (const it of items) kb.text(`#${it.id} ${short(it.title)} — ${fmt(it.price)}`, `item:${it.id}`).row();
+  // Цена В НАЧАЛЕ подписи — Telegram обрезает длинные кнопки, а цену видно всегда
+  for (const it of items) kb.text(`${fmt(it.price)} · #${it.id} ${short(it.title, 30)}`, `item:${it.id}`).row();
   kb.text('◀️ К категориям', 'back:cats').row();
   kb.text('🛒 Корзина', 'cart');
   return kb;
