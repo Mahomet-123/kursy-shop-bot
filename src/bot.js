@@ -15,6 +15,8 @@ export const bot = TOKEN ? new Bot(TOKEN) : null;
 
 const fmt = (n) => `${n.toLocaleString('ru-RU')} ₽`;
 const short = (s, n = 46) => (s.length > n ? `${s.slice(0, n - 1)}…` : s);
+// Безопасный ответ на нажатие кнопки: «query is too old» не должен ронять обработчик
+const ack = (ctx, text) => ctx.answerCallbackQuery(text).catch(() => {});
 
 // ---------- Клавиатуры ----------
 function categoriesKeyboard() {
@@ -203,67 +205,68 @@ if (bot) {
     await showAdminPending(ctx);
   });
 
-  // Навигация
+  // Навигация. Отвечаем на нажатие ПЕРВЫМ делом, иначе Telegram может вернуть
+  // «query is too old» и кнопка «залипнет» со спиннером.
   bot.callbackQuery('back:cats', async (ctx) => {
+    await ack(ctx);
     await ctx.editMessageText('📚 Выбери категорию:', { reply_markup: categoriesKeyboard() });
-    await ctx.answerCallbackQuery();
   });
 
   bot.callbackQuery(/^cat:(\d+)$/, async (ctx) => {
     const cat = getCategoryNames()[Number(ctx.match[1])];
-    if (!cat) return ctx.answerCallbackQuery('Категория не найдена');
+    if (!cat) return ack(ctx, 'Категория не найдена');
+    await ack(ctx);
     await ctx.editMessageText(`📂 ${cat}:`, { reply_markup: categoryKeyboard(cat) });
-    await ctx.answerCallbackQuery();
   });
 
   bot.callbackQuery(/^item:(\d+)$/, async (ctx) => {
     const it = getItem(Number(ctx.match[1]));
-    if (!it) return ctx.answerCallbackQuery('Не найдено');
+    if (!it) return ack(ctx, 'Не найдено');
+    await ack(ctx);
     // Без parse_mode: в названиях встречаются _ и * (напр. COPY_PASTE) — ломают Markdown
     await ctx.editMessageText(
       `📄 ${it.title}\nКатегория: ${it.category}\nЦена: ${fmt(it.price)}`,
       { reply_markup: itemKeyboard(it.id) },
     );
-    await ctx.answerCallbackQuery();
   });
 
   bot.callbackQuery(/^back:item:(\d+)$/, async (ctx) => {
     const it = getItem(Number(ctx.match[1]));
     const cat = it ? it.category : '';
+    await ack(ctx);
     await ctx.editMessageText(`📂 ${cat}:`, { reply_markup: categoryKeyboard(cat) });
-    await ctx.answerCallbackQuery();
   });
 
   // Корзина
   bot.callbackQuery('cart', async (ctx) => {
-    await ctx.answerCallbackQuery();
+    await ack(ctx);
     await showCart(ctx);
   });
 
   bot.callbackQuery(/^add:(\d+)$/, async (ctx) => {
     const id = Number(ctx.match[1]);
     ctx.session.cart[id] = (ctx.session.cart[id] || 0) + 1;
-    await ctx.answerCallbackQuery('Добавлено в корзину 🛒');
+    await ack(ctx, 'Добавлено в корзину 🛒');
   });
 
   bot.callbackQuery('clearcart', async (ctx) => {
     ctx.session.cart = {};
-    await ctx.answerCallbackQuery('Корзина очищена');
+    await ack(ctx, 'Корзина очищена');
   });
 
   bot.callbackQuery('checkout', async (ctx) => {
     const cart = ctx.session.cart || {};
     const ids = Object.keys(cart).map(Number);
-    if (!ids.length) return ctx.answerCallbackQuery('Корзина пуста');
+    if (!ids.length) return ack(ctx, 'Корзина пуста');
     const list = getItems(ids).map((it) => ({ item: it, qty: cart[it.id] || 1 }));
-    await ctx.answerCallbackQuery();
+    await ack(ctx);
     await payItems(ctx, list);
   });
 
   bot.callbackQuery(/^buy:(\d+)$/, async (ctx) => {
     const it = getItem(Number(ctx.match[1]));
-    if (!it) return ctx.answerCallbackQuery('Не найдено');
-    await ctx.answerCallbackQuery();
+    if (!it) return ack(ctx, 'Не найдено');
+    await ack(ctx);
     await payItems(ctx, [{ item: it, qty: 1 }]);
   });
 
@@ -271,39 +274,39 @@ if (bot) {
   bot.callbackQuery(/^pay_(?:claim|demo):(.+)$/, async (ctx) => {
     const id = ctx.match[1];
     const order = store.getOrder(id);
-    if (!order || order.status !== 'pending_payment') return ctx.answerCallbackQuery('Заказ уже обработан');
-    await ctx.answerCallbackQuery('Отправлено на проверку ✅');
+    if (!order || order.status !== 'pending_payment') return ack(ctx, 'Заказ уже обработан');
+    await ack(ctx, 'Отправлено на проверку ✅');
     await onPaymentClaimed(id);
     await ctx.editMessageText('⏳ Спасибо! Заявка отправлена продавцу. Как только он подтвердит поступление перевода — пришлю материалы.');
   });
 
   // Админ: подтверждение выдачи
   bot.callbackQuery(/^adm:approve:(.+)$/, async (ctx) => {
-    if (!isAdmin(ctx)) return ctx.answerCallbackQuery('Нет доступа');
+    if (!isAdmin(ctx)) return ack(ctx, 'Нет доступа');
     const id = ctx.match[1];
     const order = store.getOrder(id);
     if (!order || !['pending_payment', 'claimed_paid', 'paid'].includes(order.status)) {
-      return ctx.answerCallbackQuery('Уже обработан');
+      return ack(ctx, 'Уже обработан');
     }
+    await ack(ctx, 'Выдаю…');
     store.updateOrder(id, { status: 'delivered', deliveredAt: new Date().toISOString() });
     await deliverToBuyer(order);
     await ctx.editMessageText(`✅ Выдано: ${id}`);
-    await ctx.answerCallbackQuery('Выдано');
   });
 
   bot.callbackQuery(/^adm:reject:(.+)$/, async (ctx) => {
-    if (!isAdmin(ctx)) return ctx.answerCallbackQuery('Нет доступа');
+    if (!isAdmin(ctx)) return ack(ctx, 'Нет доступа');
     const id = ctx.match[1];
     const order = store.getOrder(id);
     if (!order || !['pending_payment', 'claimed_paid', 'paid'].includes(order.status)) {
-      return ctx.answerCallbackQuery('Уже обработан');
+      return ack(ctx, 'Уже обработан');
     }
+    await ack(ctx, 'Отклоняю…');
     store.updateOrder(id, { status: 'rejected' });
     try {
       await bot.api.sendMessage(order.userId, `К сожалению, заказ ${id} отклонён продавцом. Свяжитесь с поддержкой.`);
     } catch {}
     await ctx.editMessageText(`❌ Отклонено: ${id}`);
-    await ctx.answerCallbackQuery('Отклонено');
   });
 
   bot.catch((err) => console.error('Bot error:', err));
