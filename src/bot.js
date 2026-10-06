@@ -224,10 +224,11 @@ if (bot) {
     if (!it) return ack(ctx, 'Не найдено');
     await ack(ctx);
     // Без parse_mode: в названиях встречаются _ и * (напр. COPY_PASTE) — ломают Markdown
-    await ctx.editMessageText(
-      `📄 ${it.title}\nКатегория: ${it.category}\nЦена: ${fmt(it.price)}`,
-      { reply_markup: itemKeyboard(it.id) },
-    );
+    let text = `📄 ${it.title}\nКатегория: ${it.category}\nЦена: ${fmt(it.price)}`;
+    if (it.description) text += `\n\n${it.description}`;
+    if (it.stats) text += `\n\n📦 Внутри: ${it.stats}`;
+    if (text.length > 4000) text = text.slice(0, 3990) + '…';
+    await ctx.editMessageText(text, { reply_markup: itemKeyboard(it.id) });
   });
 
   bot.callbackQuery(/^back:item:(\d+)$/, async (ctx) => {
