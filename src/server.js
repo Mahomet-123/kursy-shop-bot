@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
+import { webhookCallback } from 'grammy';
 import { bot, onPaymentConfirmed } from './bot.js';
 import { payments } from './payments/index.js';
 
@@ -36,7 +37,7 @@ app.post('/yoomoney/webhook', async (req, res) => {
 if (bot) {
   if (PUBLIC_URL) {
     const webhookUrl = `${PUBLIC_URL}/telegram`;
-    app.use('/telegram', (req, res) => bot.handleUpdate(req.body, res));
+    app.use('/telegram', webhookCallback(bot, 'express'));
     bot.api.setWebhook(webhookUrl)
       .then(() => console.log('✅ Webhook установлен:', webhookUrl))
       .catch((e) => console.error('❌ Ошибка установки webhook:', e.message));
